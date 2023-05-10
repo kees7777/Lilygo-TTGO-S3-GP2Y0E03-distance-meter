@@ -15,8 +15,8 @@ GP2Y0E03 meter(0x40) ;
 float distance;
 
 TFT_eSPI lcd = TFT_eSPI();
-TFT_eSprite sprite = TFT_eSprite(&lcd); // nr1 sprite actie 1
-// TFT_eSprite sprite2 = TFT_eSprite(&lcd); // nr2 sprite actie 1
+TFT_eSprite sprite = TFT_eSprite(&lcd); 
+
 
 unsigned int teller = 0;
 unsigned int counter = 0;
@@ -39,11 +39,9 @@ void setup(void)
     pinMode(BUTTON_RIGHT,INPUT);
     pinMode(BUTTON_LEFT,INPUT);
 
-    //Serial.begin(115200); // serial werkt niet
     lcd.init();
     lcd.setSwapBytes(true);
     show_pinout(500);
-    // sprite.createSprite(170, 320);  //  lcd.setRotation(2) / lcd.setRotation(4); // nr1 sprite actie 2
     sprite.createSprite(320, 170); //  lcd.setRotation(1) / lcd.setRotation(3);
     sprite.setTextDatum(3);
     sprite.setSwapBytes(true);  // nr1 sprite actie 3
@@ -77,39 +75,8 @@ void loop()
 
       sprite.pushSprite(0,0);  // nr1 sprite actie 5
       counter += 1 ;
-      //Serial.println(counter);
   }
-
-
-  
- // sprite.fillRoundRect(6,5,38,32,4,blue);
-  
- // sprite.pushImage( 0 , 0 , 170 , 320 , pinoutS3 );  // nr1 sprite actie 4
-
-// for(int i=1;i<13;i++)
-  // {  
-  //   sprite.drawLine(            0 , pinoffset  +(i*pindd)     , 169    ,pinoffset  +(i*pindd)   ,TFT_WHITE);
-  //   if (  strlen(adcl[i-1]) > 0  )
-  //     { 
-  //       sprite.fillRoundRect(       0 , pinoffset - 8 +(i*pindd) ,  30 , 16 , 3 , TFT_DARKGREEN );
-  //     sprite.setTextColor(TFT_BLUE,TFT_DARKGREEN);
-  //    sprite.setTextDatum(3);  sprite.drawString(adcl[i-1], 4   ,pinoffset +(i*pindd),1) ;
-  //     }
-  
-  //  if (  strlen(adcr[i-1]) > 0  )
-  //     {
-  //       sprite.fillRoundRect(  169-50 , pinoffset - 8 +(i*pindd) ,  30 , 16 , 3 , TFT_DARKGREEN );
-  //       sprite.setTextColor(TFT_RED);
-  //   sprite.setTextDatum(5);  sprite.drawString(adcr[i-1], 169-4   ,pinoffset +(i*pindd),1) ;
-  //     }
-
-  //   sprite.setTextColor(TFT_WHITE); sprite.setTextDatum(5);  sprite.drawString(pinl[i-1], 80   ,pinoffset +(i*pindd),2) ;
-  //   sprite.setTextColor(TFT_WHITE); sprite.setTextDatum(3);  sprite.drawString(pinr[i-1], 90   ,pinoffset +(i*pindd),2) ;
-
-// }
-  
- 
-  } 
+} 
 
 
    
