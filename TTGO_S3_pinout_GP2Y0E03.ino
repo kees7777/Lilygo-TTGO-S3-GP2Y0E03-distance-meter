@@ -9,7 +9,7 @@
 #include "GP2Y0E03.h"
 #include <Wire.h>
 #include "TFT_eSPI.h"
-#include "pinoutS3.h" // pinout picture , lcd.setRotation(4); sprite.pushImage( 0,0,170 , 320 ,  pinoutS3   );
+#include "pinoutS3.h" 
 
 GP2Y0E03 meter(0x40) ;
 float distance;
