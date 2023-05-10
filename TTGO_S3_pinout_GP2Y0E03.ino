@@ -30,7 +30,7 @@ unsigned int seconden = 0 , msec = 0 ;
 
 void show_pinout(unsigned int tijdms )  {  lcd.setRotation(4); lcd.fillScreen(TFT_BLACK); lcd.pushImage( 0 , 0 , 170 , 320 , pinoutS3 ); delay(tijdms); }
 
-unsigned long previousMillis = 0;  // will store last time LED was updated
+unsigned long previousMillis = 0;  
 const long interval = 100;   
 String HS , MS, SSEc ;
 
