@@ -4,7 +4,6 @@
 // LILYGO T-DISPLAY S3
 // ADC2 gaat niet samen met WIFI
 
-
 #include <Arduino.h>
 #include "GP2Y0E03.h"
 #include <Wire.h>
@@ -16,7 +15,6 @@ float distance;
 
 TFT_eSPI lcd = TFT_eSPI();
 TFT_eSprite sprite = TFT_eSprite(&lcd); 
-
 
 unsigned int teller = 0;
 unsigned int counter = 0;
@@ -73,7 +71,7 @@ void loop()
       if (distance == -1) {  sprite.setTextColor(TFT_RED);   sprite.drawString("Meter buiten bereik" , 30 , 150 , 4 ); }
       else { sprite.setTextColor(TFT_CYAN);        sprite.drawString("afstand = " + String(distance ) + " cm", 30 , 150 , 4 ); }
 
-      sprite.pushSprite(0,0);  // nr1 sprite actie 5
+      sprite.pushSprite(0,0);  
       counter += 1 ;
   }
 } 
